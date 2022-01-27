@@ -13,7 +13,7 @@ export CIJ_TEST_NAME
 source "$CIJ_ROOT/modules/cijoe.sh"
 test.enter
 
-if cij.cmd "hostname"; then
+if ! cij.cmd "hostname"; then
   test.fail "Failed running 'hostname' on test-target"
 fi
 
