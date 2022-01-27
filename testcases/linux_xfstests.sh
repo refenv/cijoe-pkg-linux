@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Example of using the SHELL package "xfstests"
+# Example of using the CIJOE module "xfstests" provided with 'cijoe-pkg-linux'
 #
 # One can either write a testcase with logic defining the tests within the
 # script, or use the script to call another testcase e.g. as a wrapper for other
@@ -9,12 +9,12 @@
 # This is an example of the latter, a wrapper for "xfstests", running the
 # "generic/001" testcase as defined in "xfstests".
 #
-# This example uses the "xfstests" package to run a quick test, stores output
+# This example uses the "xfstests" module to run a quick test, stores output
 # from "xfstests" in CIJ_TEST_AUX_ROOT, and excluding the test of CPU hotplug
 # during IO
 #
-# Using packages often requires defining specific environment variables. The
-# variables to define are documented within the package source, e.g.
+# Using modules often requires defining specific environment variables. The
+# variables to define are documented within the module source, e.g.
 # modules/fs.sh
 #
 # Such variables should be declared within an "env" by doing so the cij_runner

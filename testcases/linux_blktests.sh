@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 #
-# Example of using the SHELL package "blktests"
+# Example of using the cijoe-module "blktests"
 #
-# This example uses the "blktests" package to run a quick test, stores output
+# This example uses the "blktests" module to run a quick test, stores output
 # from 'blktests' in CIJ_TEST_AUX_ROOT, and excluding the test of CPU hotplug
 # during IO
 #
-# Using packages often requires defining specific environment variables. The
-# variables to define are documented within the package source, e.g.
+# Using modules often requires defining specific environment variables. The
+# variables to define are documented within the module source, e.g.
 # modules/blktests.sh
 #
 # Such variables should be declared within an "env" by doing so the cij_runner

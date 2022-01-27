@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 #
-# Example of using the SHELL package "fs"
+# Example of using the CIJOE module "fs"
 #
-# This example uses the "fs" package to run a quick test, stores output
+# This example uses the "fs" module to run a quick test, stores output
 # from 'fs' in CIJ_TEST_AUX_ROOT, and excluding the test of CPU hotplug
 # during IO
 #
-# Using packages often requires defining specific environment variables. The
-# variables to define are documented within the package source, e.g.
+# Using modules often requires defining specific environment variables. The
+# variables to define are documented within the module source, e.g.
 # modules/fs.sh
 #
 # Such variables should be declared within an "env" by doing so the cij_runner
@@ -26,7 +26,7 @@ FS_DEV_PATH=$BLOCK_DEV_PATH
 FS_TYPE=ext4
 FS_MOUNT_POINT=$(ssh.cmd_output "mktemp -d \"FSMP_XXXXXX\" -p /tmp")
 
-if ! ssh.cmd "[[ -d \"$FS_MOUNT_POINT\" ]]"; then
+if ! cij.cmd "[[ -d \"$FS_MOUNT_POINT\" ]]"; then
   test.fail "could not create fs mount-point"
 fi
 

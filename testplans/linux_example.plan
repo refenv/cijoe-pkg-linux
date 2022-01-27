@@ -1,0 +1,12 @@
+descr: Example plan to illustrate usage of hooks
+descr_long: |
+  Run this testplan using a Linux test-target, the hooks will collect the following
+  * dmesg, invokes 'dmesg -w' on the test-target and pipes it to file on the dev-box
+  * sysinf, collects the output from running 'free', 'uname', 'lshw', and 'cat' of '/proc/cpuinfo',
+  '/etc/os-release', as well as environment variables
+  In case of failure, then check the logs / test-report
+hooks: ["dmesg", "sysinf"]
+testsuites:
+  - name: Tooling
+    testcases:
+      - linux_hooks.sh
