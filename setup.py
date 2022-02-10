@@ -20,7 +20,7 @@ def read(*parts):
 
 setup(
     name="cijoe-pkg-linux",
-    version="0.0.2",
+    version="0.0.3",
     description="CIJOE: linux package",
     long_description=read('README.rst'),
     author="Simon A. F. Lund",
