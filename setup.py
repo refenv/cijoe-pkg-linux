@@ -11,7 +11,7 @@ setup(
     version="0.9.0",
     author="Simon A. F. Lund",
     author_email="os@safl.dk",
-    url="https://github.com/refenv/joe-pkg-linux/",
+    url="https://github.com/refenv/cijoe-pkg-linux/",
     license="BSD",
     install_requires=[
         "cijoe>=0.9.1",
