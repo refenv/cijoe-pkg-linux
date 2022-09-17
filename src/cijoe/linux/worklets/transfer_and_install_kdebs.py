@@ -14,6 +14,7 @@ Retargetable: True
 Transfer from local to remote, the config.transport.ssh determines the remote.
 """
 import errno
+import logging as log
 from pathlib import Path
 
 
@@ -24,7 +25,12 @@ def worklet_entry(args, cijoe, step):
         return errno.EINVAL
 
     deb_root = Path(deb_root)
+    deb_root = (
+        deb_root if deb_root.is_absolute() else Path(args.output).parent / deb_root
+    )
     remote_kdebs_dir = "/tmp/kdebs"
+
+    log.info(f"deb_root: '{deb_root}'")
 
     cijoe.run(f"rm  {remote_kdebs_dir}/*.deb || true")
     cijoe.run(f"mkdir -p {remote_kdebs_dir}")
