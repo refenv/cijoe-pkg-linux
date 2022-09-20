@@ -6,8 +6,11 @@ There are a myriad of ways to build and install a custom Linux kernel. This work
 builds it as a Debian package. The generated .deb packages are stored in
 cijoe.output_path.
 
-Retagetable: true
------------------
+Retargetable: False
+-------------------
+
+The collection of the generated .debs are not retrieved via cijoe.get(), doing so would
+make it retargetable.
 
 Worklet arguments
 -----------------
@@ -20,7 +23,7 @@ from pathlib import Path
 def worklet_entry(args, cijoe, step):
     """Configure, build and collect the build-artifacts"""
 
-    repos = Path(cijoe.config.options["repository"]["path"]).resolve()
+    repos = Path(cijoe.config.options["linux"]["repository"]["path"]).resolve()
     err, _ = cijoe.run(f"[ -d {repos} ]")
     if err:
         return err

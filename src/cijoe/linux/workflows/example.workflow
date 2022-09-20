@@ -6,5 +6,8 @@ steps:
 - name: sysinfo
   uses: linux.sysinfo
 
+- name: repository
+  uses: core.repository_prep
+
 - name: build
   uses: linux.build_kdebs
