@@ -28,8 +28,8 @@ def worklet_entry(args, cijoe, step):
     if err:
         return err
 
-    localversion = step.get("with", {"localversion": "custom"}).get("localversion")
-    run_local = step.get("with", {"run_local": True}).get("run_local")
+    localversion = step.get("with", {}).get("localversion", "custom")
+    run_local = step.get("with", {}).get("run_local", True)
     run = cijoe.run_local if run_local else cijoe.run
 
     commands = [
