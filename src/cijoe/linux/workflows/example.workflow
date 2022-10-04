@@ -2,6 +2,8 @@
 doc: |
   This workflow builds Linux kernel as .deb installable packages
 
+  NOTE, if you switch 'run_local' to 'False', then you have to collect the kdebs yourself.
+
 steps:
 - name: sysinfo
   uses: linux.sysinfo
@@ -11,3 +13,5 @@ steps:
 
 - name: build
   uses: linux.build_kdebs
+  with:
+    run_local: True

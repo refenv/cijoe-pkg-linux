@@ -9,8 +9,8 @@ cijoe.output_path.
 Retargetable: False
 -------------------
 
-The collection of the generated .debs are not retrieved via cijoe.get(), doing so would
-make it retargetable.
+It is intended to be run "locally" since, currently the collection of the generated
+.debs are not retrieved via cijoe.get(), doing so would make it retargetable.
 
 Worklet arguments
 -----------------
@@ -29,6 +29,8 @@ def worklet_entry(args, cijoe, step):
         return err
 
     localversion = step.get("with", {"localversion": "custom"}).get("localversion")
+    run_local = step.get("with", {"run_local": True}).get("run_local")
+    run = cijoe.run_local if run_local else cijoe.run
 
     commands = [
         "[ -f .config ] && rm .config || true",
@@ -43,7 +45,7 @@ def worklet_entry(args, cijoe, step):
         f"mv ../*.buildinfo {cijoe.output_path}/artifacts/linux",
     ]
     for cmd in commands:
-        err, _ = cijoe.run(cmd, cwd=str(repos))
+        err, _ = run(cmd, cwd=str(repos))
         if err:
             return err
 
