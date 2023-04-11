@@ -20,7 +20,7 @@ with.localversion
 from pathlib import Path
 
 
-def worklet_entry(args, cijoe, step):
+def main(args, cijoe, step):
     """Configure, build and collect the build-artifacts"""
 
     repos = Path(cijoe.config.options["linux"]["repository"]["path"]).resolve()

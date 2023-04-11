@@ -18,7 +18,7 @@ import errno
 import cijoe.linux.null_blk as null_blk
 
 
-def worklet_entry(args, cijoe, step):
+def main(args, cijoe, step):
     """Insert or remove the null_blk"""
 
     do = step.get("with", {"do": "insert"}).get("do", "insert")

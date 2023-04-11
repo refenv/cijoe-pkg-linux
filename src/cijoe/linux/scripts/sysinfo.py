@@ -9,7 +9,7 @@ Retargetable: True
 """
 
 
-def worklet_entry(args, cijoe, step):
+def main(args, cijoe, step):
     """Collect Linux system information"""
 
     commands = [

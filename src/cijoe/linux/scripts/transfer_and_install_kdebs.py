@@ -18,7 +18,7 @@ import logging as log
 from pathlib import Path
 
 
-def worklet_entry(args, cijoe, step):
+def main(args, cijoe, step):
 
     deb_root = step.get("with", {}).get("local_kdebs_dir", None)
     if not deb_root:
